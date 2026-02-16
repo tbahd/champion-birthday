@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import confetti from "canvas-confetti";
 import birthdaySong from "./assets/happy-birthday.mp3";
 
-const personName = "Champion"
+const personName = "Ologun Oluwagbogo Champion Adeola"
 
 const fullMessage = `Today isn't just about cake and candles. It's about celebrating someone truly special. I'm so grateful for you and everything you are. May this year bring you joy, growth, laughter, and everything your heart desires. Keep shining and never stop being amazing ❤️`;
 
