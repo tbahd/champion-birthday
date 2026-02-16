@@ -1,16 +1,38 @@
-# React + Vite
+# 🎉 Birthday Surprise App
+A simple and interactive birthday surprise web app built with React and Tailwind CSS. This app displays a mysterious envelope message, and when opened, it reveals a birthday message with confetti animation and a birthday song.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Live Link
+https://for-champion.netlify.app
 
-Currently, two official plugins are available:
+## 🚀 Features
+- 💌 Surprise envelope screen
+- 🎉 Confetti animation on open
+- 🎵 Birthday song playback
+- 💖 Personalized hardcoded name
+- 📱 Responsive design
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Built With
+- React
+- Tailwind CSS
+- canvas-confetti
 
-## React Compiler
+## 📸 How It Works
+The app initially shows:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 💌 A Special Message For You
+- When the "Open Me" button is clicked:
+1. Confetti animation plays
+2. Birthday song starts
+3. Personalized birthday message appears
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## 📚 What I Learned
+- Using useState for UI control
+- Using useRef to control audio playback
+- Integrating external libraries (confetti)
+- Creating interactive UI experiences
+
+## 💖 Author
+
+Built with ❤️ as a surprise birthday project.

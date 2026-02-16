@@ -1,24 +1,55 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import confetti from "canvas-confetti";
 import birthdaySong from "./assets/happy-birthday.mp3";
 
 const personName = "Champion"
 
+const fullMessage = `Today isn't just about cake and candles. It's about celebrating someone truly special. I'm so grateful for you and everything you are. May this year bring you joy, growth, laughter, and everything your heart desires. Keep shining and never stop being amazing ❤️`;
+
 function App() {
+
   const [isOpened, setIsOpened] = useState(false);
   const audioRef = useRef(null);
+  const [displayedText, setDisplayedText] = useState("");
+  const [typingFinished, setTypingFinished] = useState(false);
 
-  function fireConfetti() {
-    confetti({
-      particleCount: 350,
-      spread: 120,
-      origin: { y: 0.6 },
-    });
+//effect for message appearing at interval
+useEffect(() => {
+  if (!isOpened) return;
+
+  let index = 0;
+
+  const interval = setInterval(() => {
+    setDisplayedText(fullMessage.slice(0, index + 1));
+    index++;
+
+    if (index === fullMessage.length) {
+      clearInterval(interval);
+      setTypingFinished(true); 
+    }
+  }, 90); // speed (lower = faster)
+
+  return () => clearInterval(interval);
+}, [isOpened]);
+
+//effect for confetti at end of message
+useEffect(() => {
+  if (!typingFinished) return;
+
+  confetti({
+    particleCount: 350,
+    spread: 120,
+    origin: { y: 0.6 },
+  });
+
+  if (audioRef.current) {
+    audioRef.current.play();
   }
+}, [typingFinished]);
+
 
   function handleOpen() {
     setIsOpened(true);
-    fireConfetti();
 
     if (audioRef.current) {
       audioRef.current.play();
@@ -48,12 +79,9 @@ function App() {
             </h2>
 
             <p className="text-gray-700 leading-relaxed text-[1.15rem]">
-              Today isn't just about cake and candles. It's about celebrating
-              someone truly special. I'm so grateful for you and everything you
-              are. May this year bring you joy, growth, laughter, and everything
-              your heart desires. Keep shining and never stop being amazing ❤️
+              {displayedText}
             </p>
-
+            
             <p className="text-sm text-gray-500 italic text-[1rem]">
               — From someone who cares deeply about you 💕
             </p>
