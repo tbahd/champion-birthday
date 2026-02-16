@@ -83,7 +83,7 @@ useEffect(() => {
             </p>
             
             <p className="text-sm text-gray-500 italic text-[1rem]">
-              — From someone who cares deeply about you aka oluwatomide 💕
+              — From someone who cares about you aka oluwatomide 💕
             </p>
           </div>
         )}
